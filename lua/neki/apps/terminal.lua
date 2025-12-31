@@ -17,12 +17,20 @@ vim.o.scrolloff = 20
 -- Use <Esc> to exit terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
--- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
-vim.keymap.set({ 't', 'i' }, '<A-h>', '<C-\\><C-n><C-w>h')
-vim.keymap.set({ 't', 'i' }, '<A-j>', '<C-\\><C-n><C-w>j')
-vim.keymap.set({ 't', 'i' }, '<A-k>', '<C-\\><C-n><C-w>k')
-vim.keymap.set({ 't', 'i' }, '<A-l>', '<C-\\><C-n><C-w>l')
-vim.keymap.set({ 'n' }, '<A-h>', '<C-w>h')
-vim.keymap.set({ 'n' }, '<A-j>', '<C-w>j')
-vim.keymap.set({ 'n' }, '<A-k>', '<C-w>k')
-vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l')
+-- BUFFERS
+vim.keymap.set('n', '<A-h>', '<cmd>bprev<CR>', { desc = 'Move to the previous buffer' })
+vim.keymap.set('n', '<A-l>', '<cmd>bnext<CR>', { desc = 'Move to the next buffer' })
+
+-- Set <A-1> ... <A-9> to open buffers by index
+for i = 1, 9 do
+    local keymap  = string.format("<A-%d>", i)
+    local command = string.format("<cmd>b%d<CR>", i)
+
+    vim.keymap.set("n", keymap, command)
+end
+
+-- from nvim kickstart
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
