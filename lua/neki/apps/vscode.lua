@@ -21,8 +21,11 @@ vim.opt.signcolumn = "no"
 
 -- BUFFERS
 -- Use vscode actions instead of 'bnext' and 'bprev' since the nvim extension pollutes the buffer lists
-vscode_set("n", "<A-h>", "workbench.action.previousEditor", { desc = 'Move to the previous buffer' })
-vscode_set("n", "<A-l>", "workbench.action.nextEditor"    , { desc = 'Move to the next buffer' })
+vscode_set("n", "<M-h>", "workbench.action.previousEditor", { desc = 'Move to the previous tab' })
+vscode_set("n", "<M-l>", "workbench.action.nextEditor"    , { desc = 'Move to the next tab' })
+
+-- Set <M-1> ... <M-9> to open buffers by index
+-- Default VSCode behaviour
 
 -- from nvim kickstart
 vscode_set("n", "<C-h>", "workbench.action.focusLeftGroup" , { desc = "Move focus to the left window" })

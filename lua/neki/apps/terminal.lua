@@ -18,13 +18,13 @@ vim.o.scrolloff = 20
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- BUFFERS
-vim.keymap.set('n', '<A-h>', '<cmd>bprev<CR>', { desc = 'Move to the previous buffer' })
-vim.keymap.set('n', '<A-l>', '<cmd>bnext<CR>', { desc = 'Move to the next buffer' })
+vim.keymap.set('n', '<M-h>', 'gT', { desc = 'Move to the previous tab' })
+vim.keymap.set('n', '<M-l>', 'gt', { desc = 'Move to the next tab' })
 
--- Set <A-1> ... <A-9> to open buffers by index
+-- Set <M-1> ... <M-9> to open buffers by index
 for i = 1, 9 do
-    local keymap  = string.format("<A-%d>", i)
-    local command = string.format("<cmd>b%d<CR>", i)
+    local keymap  = string.format("<M-%d>", i)
+    local command = string.format("%dgt", i)
 
     vim.keymap.set("n", keymap, command)
 end
