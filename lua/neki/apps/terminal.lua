@@ -17,9 +17,11 @@ vim.o.scrolloff = 20
 -- Use <Esc> to exit terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
--- BUFFERS
-vim.keymap.set('n', '<M-h>', 'gT', { desc = 'Move to the previous tab' })
-vim.keymap.set('n', '<M-l>', 'gt', { desc = 'Move to the next tab' })
+-- TABS
+vim.keymap.set("n", "<M-h>", "gT"               , { desc = "Move to the previous tab" })
+vim.keymap.set("n", "<M-j>", "<cmd>tabmove+<CR>", { desc = "Increase tab index position" })
+vim.keymap.set("n", "<M-k>", "<cmd>tabmove-<CR>", { desc = "Decrease tab index position" })
+vim.keymap.set("n", "<M-l>", "gt"               , { desc = "Move to the next tab" })
 
 -- Set <M-1> ... <M-9> to open buffers by index
 for i = 1, 9 do

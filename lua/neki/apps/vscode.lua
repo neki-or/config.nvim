@@ -15,14 +15,16 @@ end
 vim.notify = vscode.notify
 
 -- Disable Neovim UI
-vim.opt.number = false
-vim.opt.relativenumber = false
+-- vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.signcolumn = "no"
 
--- BUFFERS
--- Use vscode actions instead of 'bnext' and 'bprev' since the nvim extension pollutes the buffer lists
-vscode_set("n", "<M-h>", "workbench.action.previousEditor", { desc = 'Move to the previous tab' })
-vscode_set("n", "<M-l>", "workbench.action.nextEditor"    , { desc = 'Move to the next tab' })
+-- TABS
+-- Use vscode actions instead of 'gt' and 'gT' since they can't be mapped
+vscode_set("n", "<M-h>", "workbench.action.previousEditor"        , { desc = "Move to the previous tab" })
+vscode_set("n", "<M-j>", "workbench.action.moveEditorRightInGroup", { desc = "Increase tab index position" })
+vscode_set("n", "<M-k>", "workbench.action.moveEditorLeftInGroup" , { desc = "Decrease tab index position" })
+vscode_set("n", "<M-l>", "workbench.action.nextEditor"            , { desc = "Move to the next tab" })
 
 -- Set <M-1> ... <M-9> to open buffers by index
 -- Default VSCode behaviour
