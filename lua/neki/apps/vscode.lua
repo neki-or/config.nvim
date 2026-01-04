@@ -29,3 +29,6 @@ vscode_set("n", "<C-h>", "workbench.action.focusLeftGroup" , { desc = "Move focu
 vscode_set("n", "<C-j>", "workbench.action.focusBelowGroup", { desc = "Move focus to the lower window" })
 vscode_set("n", "<C-k>", "workbench.action.focusAboveGroup", { desc = "Move focus to the upper window" })
 vscode_set("n", "<C-l>", "workbench.action.focusRightGroup", { desc = "Move focus to the right window" })
+
+-- FILES
+vscode_set("n", "<C-e>", "workbench.files.action.focusFilesExplorer", { desc = "Open VSCode file explorer (substitute for netrw)" })
