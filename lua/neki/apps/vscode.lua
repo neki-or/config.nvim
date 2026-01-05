@@ -14,12 +14,9 @@ end
 
 vim.notify = vscode.notify
 
--- Disable Neovim UI
--- vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.signcolumn = "no"
+-- SET
 
--- TABS
+-- REMAP
 -- Use vscode actions instead of 'gt' and 'gT' since they can't be mapped
 vscode_set("n", "<M-h>", "workbench.action.previousEditor"        , { desc = "Move to the previous tab" })
 vscode_set("n", "<M-j>", "workbench.action.moveEditorRightInGroup", { desc = "Increase tab index position" })
@@ -35,5 +32,4 @@ vscode_set("n", "<C-j>", "workbench.action.focusBelowGroup", { desc = "Move focu
 vscode_set("n", "<C-k>", "workbench.action.focusAboveGroup", { desc = "Move focus to the upper window" })
 vscode_set("n", "<C-l>", "workbench.action.focusRightGroup", { desc = "Move focus to the right window" })
 
--- FILES
-vscode_set("n", "<C-e>", "workbench.files.action.focusFilesExplorer", { desc = "Open VSCode file explorer (substitute for netrw)" })
+vscode_set("n", "<C-e>", "workbench.files.action.focusFilesExplorer", { desc = "Open file manager" })
