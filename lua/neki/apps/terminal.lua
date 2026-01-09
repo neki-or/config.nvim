@@ -10,6 +10,10 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.o.mouse = 'a'
 vim.o.wrap = false
 
+-- Set tabs as 4 spaces
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+
 vim.o.splitright = true
 vim.o.splitbelow = true
 
