@@ -38,3 +38,4 @@ vscode_set("n", "<C-k>", "workbench.action.focusAboveGroup", { desc = "Move focu
 vscode_set("n", "<C-l>", "workbench.action.focusRightGroup", { desc = "Move focus to the right window" })
 
 vscode_set("n", "<C-e>", "workbench.files.action.focusFilesExplorer", { desc = "Open file manager" })
+vscode_set("n", "<C-t>", "workbench.action.createTerminalEditor"    , { desc = "Open terminal mode" })
