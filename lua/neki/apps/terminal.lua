@@ -9,6 +9,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- Enable mouse mode
 vim.o.mouse = 'a'
 vim.o.wrap = false
+vim.o.confirm = true
 
 -- Set tabs as 4 spaces
 vim.o.expandtab = true
@@ -17,7 +18,7 @@ vim.o.shiftwidth = 4
 vim.o.splitright = true
 vim.o.splitbelow = true
 
-vim.o.confirm = true
+vim.o.undodir = "/tmp/nvim/undo//"
 vim.o.undofile = true
 
 -- REMAP
