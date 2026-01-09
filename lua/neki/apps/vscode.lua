@@ -15,6 +15,11 @@ end
 vim.notify = vscode.notify
 
 -- SET
+-- Mimic the same settings in terminal.lua when a corresponding one exists and isn't default already
+vscode.update_config("editor.cursorSurroundingLines", 10, "global")
+vscode.update_config("editor.renderWhitespace", "trailing", "global")
+vscode.update_config("editor.wordWrap", "off", "global")
+vscode.update_config("editor.tabSize", 4, "global")
 
 -- REMAP
 -- Use vscode actions instead of 'gt' and 'gT' since they can't be mapped
