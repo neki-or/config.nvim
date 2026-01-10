@@ -46,3 +46,9 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 
 vim.keymap.set('n', '<leader>e', '<cmd>:Ex<CR>' , { desc = 'Open file manager' })
 vim.keymap.set('n', '<leader>t', '<cmd>:ter<CR>', { desc = 'Open terminal mode' }) -- Overrides some tags command
+
+-- Stay centered
+vim.keymap.set("n", "<C-d>", "<C-d>zz0")
+vim.keymap.set("n", "<C-u>", "<C-u>zz0")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
