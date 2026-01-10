@@ -1,0 +1,30 @@
+{
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+
+    // "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.occurrencesHighlight": "off",
+    "editor.stickyScroll.enabled": false,
+    // "editor.smartSelect.selectLeadingAndTrailingWhitespace": false,
+
+    "workbench.activityBar.location": "top",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.panel.defaultLocation": "right",
+
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.stickyScroll.enabled": false,
+    // "terminal.integrated.allowChords": false,
+
+    "chat.commandCenter.enabled": false,
+    "debug.openDebug": "neverOpen",
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
+
+    // Mimic the same settings in terminal.lua when a corresponding one exists and isn't default already
+    "editor.cursorSurroundingLines": 10,
+    "editor.renderWhitespace": "trailing",
+    "editor.tabSize": 4,
+    "editor.wordWrap": "off"
+}

@@ -15,11 +15,17 @@ end
 vim.notify = vscode.notify
 
 -- SET
--- Mimic the same settings in terminal.lua when a corresponding one exists and isn't default already
-vscode.update_config("editor.cursorSurroundingLines", 10, "global")
-vscode.update_config("editor.renderWhitespace", "trailing", "global")
-vscode.update_config("editor.wordWrap", "off", "global")
-vscode.update_config("editor.tabSize", 4, "global")
+-- Symlink settings.json and keybindings.json
+vim.fn.system({
+    "ln", "-sf",
+    os.getenv("HOME") .. "/.config/nvim/lua/neki/apps/vscode-settings.jsonc",
+    os.getenv("HOME") .. "/.config/Code/User/settings.json"
+})
+vim.fn.system({
+    "ln", "-sf",
+    os.getenv("HOME") .. "/.config/nvim/lua/neki/apps/vscode-keybindings.jsonc",
+    os.getenv("HOME") .. "/.config/Code/User/keybindings.json"
+})
 
 -- REMAP
 -- Use vscode actions instead of 'gt' and 'gT' since they can't be mapped
