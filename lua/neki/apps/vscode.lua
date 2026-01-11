@@ -42,10 +42,12 @@ vscode_set("n", "<M-l>", "workbench.action.nextEditor"            , { desc = "Mo
 
 -- Set <M-1> ... <M-9> to open buffers by index
 -- LINUX: Default VSCode behaviour
--- MACOS: Remapping Control to Option
+-- MACOS: Remapping <C-1> ... <C-9> with Option relative symbols
 if vim.g.darwin then
-    for i = 1, 9 do
-        local keymap  = string.format("<M-%d>", i)
+    local option_number_row_symbols = {"«", "“", "‘", "¥", "~", "‹", "÷", "´", "`"}
+
+    for i = 1, #option_number_row_symbols do
+        local keymap  = option_number_row_symbols[i]
         local command = string.format("workbench.action.openEditorAtIndex%d", i)
 
         vscode_set("n", keymap, command)
