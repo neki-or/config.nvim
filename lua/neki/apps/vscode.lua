@@ -12,19 +12,25 @@ local vscode_set_async = function(modes, keycode, vscode_command)
     vim.keymap.set(modes, keycode, fun)
 end
 
+local vscode_stdpath = function()
+    local config_dir = vim.g.darwin and "/Library/Application Support" or "/.config"
+
+    return os.getenv("HOME") .. config_dir .. "/Code"
+end
+
 vim.notify = vscode.notify
 
 -- SET
 -- Symlink settings.json and keybindings.json
 vim.fn.system({
     "ln", "-sf",
-    os.getenv("HOME") .. "/.config/nvim/lua/neki/apps/vscode-settings.jsonc",
-    os.getenv("HOME") .. "/.config/Code/User/settings.json"
+    vim.fn.stdpath('config') .. "/lua/neki/apps/vscode-settings.jsonc",
+    vscode_stdpath()         .. "/User/settings.json"
 })
 vim.fn.system({
     "ln", "-sf",
-    os.getenv("HOME") .. "/.config/nvim/lua/neki/apps/vscode-keybindings.jsonc",
-    os.getenv("HOME") .. "/.config/Code/User/keybindings.json"
+    vim.fn.stdpath('config') .. "/lua/neki/apps/vscode-keybindings.jsonc",
+    vscode_stdpath()         .. "/User/keybindings.json"
 })
 
 -- REMAP
@@ -35,7 +41,16 @@ vscode_set("n", "<M-k>", "workbench.action.moveEditorLeftInGroup" , { desc = "De
 vscode_set("n", "<M-l>", "workbench.action.nextEditor"            , { desc = "Move to the next tab" })
 
 -- Set <M-1> ... <M-9> to open buffers by index
--- Default VSCode behaviour
+-- LINUX: Default VSCode behaviour
+-- MACOS: Remapping Control to Option
+if vim.g.darwin then
+    for i = 1, 9 do
+        local keymap  = string.format("<M-%d>", i)
+        local command = string.format("workbench.action.openEditorAtIndex%d", i)
+
+        vscode_set("n", keymap, command)
+    end
+end
 
 -- from nvim kickstart
 vscode_set("n", "<C-h>", "workbench.action.focusLeftGroup" , { desc = "Move focus to the left window" })
