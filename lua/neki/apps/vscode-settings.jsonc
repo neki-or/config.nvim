@@ -3,19 +3,17 @@
         "asvetliakov.vscode-neovim": 1
     },
 
-    // "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
     "editor.occurrencesHighlight": "off",
     "editor.stickyScroll.enabled": false,
-    // "editor.smartSelect.selectLeadingAndTrailingWhitespace": false,
 
     "workbench.activityBar.location": "top",
     "workbench.editor.empty.hint": "hidden",
-    "workbench.panel.defaultLocation": "right",
 
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.stickyScroll.enabled": false,
-    // "terminal.integrated.allowChords": false,
+    "terminal.integrated.suggest.cdPath": "off",
+    "terminal.integrated.suggest.enabled": false,
 
     "chat.commandCenter.enabled": false,
     "debug.openDebug": "neverOpen",
@@ -26,5 +24,8 @@
     "editor.cursorSurroundingLines": 10,
     "editor.renderWhitespace": "trailing",
     "editor.tabSize": 4,
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
+
+    // Themes
+    "workbench.colorTheme": "Hyper Term Black"
 }
