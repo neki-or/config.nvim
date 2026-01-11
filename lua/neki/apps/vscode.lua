@@ -32,6 +32,12 @@ vim.fn.system({
     vim.fn.stdpath('config') .. "/lua/neki/apps/vscode-keybindings.jsonc",
     vscode_stdpath()         .. "/User/keybindings.json"
 })
+-- MACOS: Needed to hold hjkl and have the cursor move
+if vim.g.darwin then
+    vim.fn.system({
+        "defaults", "write", "com.microsoft.VSCode", "ApplePressAndHoldEnabled", "-bool", "false"
+    })
+end
 
 -- REMAP
 -- Use vscode actions instead of 'gt' and 'gT' since they can't be mapped
