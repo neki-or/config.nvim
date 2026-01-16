@@ -46,18 +46,12 @@ vscode_set("n", "<M-j>", "workbench.action.moveEditorRightInGroup", { desc = "In
 vscode_set("n", "<M-k>", "workbench.action.moveEditorLeftInGroup" , { desc = "Decrease tab index position" })
 vscode_set("n", "<M-l>", "workbench.action.nextEditor"            , { desc = "Move to the next tab" })
 
--- Set <M-1> ... <M-9> to open buffers by index
--- LINUX: Default VSCode behaviour
--- MACOS: Remapping <C-1> ... <C-9> with Option relative symbols
-if vim.g.darwin then
-    local option_number_row_symbols = {"«", "“", "‘", "¥", "~", "‹", "÷", "´", "`"}
+-- Set <M-6> ... <M-0> to open buffers indexed 1 ... 5
+for i = 1, 5 do
+    local keymap  = string.format("<M-%d>", (i + 5) % 10)
+    local command = string.format("workbench.action.openEditorAtIndex%d", i)
 
-    for i = 1, #option_number_row_symbols do
-        local keymap  = option_number_row_symbols[i]
-        local command = string.format("workbench.action.openEditorAtIndex%d", i)
-
-        vscode_set("n", keymap, command)
-    end
+    vscode_set("n", keymap, command)
 end
 
 -- from nvim kickstart

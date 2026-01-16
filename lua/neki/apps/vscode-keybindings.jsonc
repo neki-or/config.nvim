@@ -22,5 +22,35 @@
         "key": "alt+l",
         "when": "editorTextFocus && neovim.mode != insert",
         "args": "<M-l>"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "alt+6",
+        "when": "editorTextFocus && neovim.mode != insert",
+        "args": "<M-6>"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "alt+7",
+        "when": "editorTextFocus && neovim.mode != insert",
+        "args": "<M-7>"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "alt+8",
+        "when": "editorTextFocus && neovim.mode != insert",
+        "args": "<M-8>"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "alt+9",
+        "when": "editorTextFocus && neovim.mode != insert",
+        "args": "<M-9>"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "alt+0",
+        "when": "editorTextFocus && neovim.mode != insert",
+        "args": "<M-0>"
     }
 ]

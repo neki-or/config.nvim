@@ -30,9 +30,9 @@ vim.keymap.set("n", "<M-j>", "<cmd>tabmove+<CR>", { desc = "Increase tab index p
 vim.keymap.set("n", "<M-k>", "<cmd>tabmove-<CR>", { desc = "Decrease tab index position" })
 vim.keymap.set("n", "<M-l>", "gt"               , { desc = "Move to the next tab" })
 
--- Set <M-1> ... <M-9> to open buffers by index
-for i = 1, 9 do
-    local keymap  = string.format("<M-%d>", i)
+-- Set <M-6> ... <M-0> to open buffers indexed 1 ... 5
+for i = 1, 5 do
+    local keymap  = string.format("<M-%d>", (i + 5) % 10)
     local command = string.format("%dgt", i)
 
     vim.keymap.set("n", keymap, command)
@@ -45,7 +45,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 
 vim.keymap.set('n', '<leader>e', '<cmd>:Ex<CR>' , { desc = 'Open file manager' })
-vim.keymap.set('n', '<leader>t', '<cmd>:ter<CR>', { desc = 'Open terminal mode' }) -- Overrides some tags command
+vim.keymap.set('n', '<leader>t', '<cmd>:ter<CR>', { desc = 'Open terminal mode' })
 
 -- Stay centered
 vim.keymap.set("n", "<C-d>", "<C-d>zz0")
