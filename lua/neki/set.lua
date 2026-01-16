@@ -4,7 +4,6 @@ vim.g.maplocalleader = ' '
 vim.g.darwin = vim.fn.has('macunix') == 1
 
 vim.o.number = true
-vim.o.relativenumber = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true

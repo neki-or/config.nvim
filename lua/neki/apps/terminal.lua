@@ -1,4 +1,6 @@
 -- SET
+vim.o.relativenumber = true
+
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 
