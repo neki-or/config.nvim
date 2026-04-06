@@ -1,11 +1,9 @@
-require 'neki.set'
-require 'neki.remap'
-require 'neki.cmd'
-
 if vim.g.vscode then
-  require 'neki.apps.vscode'
+    require 'neki.vscode'
 
 else
-  require 'neki.apps.terminal'
+    require 'neki.set'
+    require 'neki.remap'
+    require 'neki.cmd'
 
 end
