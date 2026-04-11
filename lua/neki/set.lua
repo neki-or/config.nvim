@@ -38,6 +38,9 @@ vim.o.updatetime = 250
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
+vim.opt.wildmode = { "noselect:lastused", "full" }
+vim.opt.wildoptions = "pum"
+
 -- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can increase startup-time.
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
