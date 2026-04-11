@@ -40,8 +40,33 @@ vim.o.timeoutlen = 300
 
 vim.opt.wildmode = { "noselect:lastused", "full" }
 vim.opt.wildoptions = "pum"
+vim.opt.wildignore:append({ "*.o", "*.obj", "*.pyc", "*.class", "*.jar" })
 
 -- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can increase startup-time.
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
+
+-- Fuzzy file picker -> https://neovim.io/doc/user/cmdline/#fuzzy-file-picker
+local filescache = {}
+function _G.Find(arg, _)
+  if vim.tbl_isempty(filescache) then
+    filescache = vim.fn.globpath('.', '**', true, true)
+
+    filescache = vim.tbl_filter(function(path)
+      return vim.fn.isdirectory(path) == 0
+    end, filescache)
+
+    filescache = vim.tbl_map(function(path)
+      return vim.fn.fnamemodify(path, ':.')
+    end, filescache)
+  end
+
+  if arg == "" then
+    return filescache
+  end
+
+  return vim.fn.matchfuzzy(filescache, arg)
+end
+
+vim.opt.findfunc = "v:lua.Find"
