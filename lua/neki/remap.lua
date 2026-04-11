@@ -20,8 +20,12 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 
-vim.keymap.set('n', '<leader>e', '<cmd>:Ex<CR>' , { desc = 'Open file manager' })
-vim.keymap.set('n', '<leader>t', '<cmd>:ter<CR>', { desc = 'Open terminal mode' })
+vim.keymap.set('n', '<leader>e', '<cmd>:Ex<CR>' ,      { desc = 'Open file manager' })
+vim.keymap.set('n', '<leader>t', '<cmd>:ter<CR>',      { desc = 'Open terminal mode' })
+vim.keymap.set('n', '<leader>f', ':find ',             { desc = 'Find file shortcut' })
+vim.keymap.set('n', '<leader>w', '<cmd>:w<CR>',        { desc = 'Save buffer' })
+vim.keymap.set('n', '<leader>q', '<cmd>:q<CR>',        { desc = 'Close buffer' })
+vim.keymap.set('n', '<leader>n', '<cmd>:tabnew<CR>',   { desc = 'Create a new tab' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
