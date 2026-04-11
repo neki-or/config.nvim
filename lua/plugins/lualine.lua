@@ -5,3 +5,5 @@ vim.pack.add({
 
 local plugin = require 'lualine'
 plugin.setup()
+
+vim.opt.showmode = false
