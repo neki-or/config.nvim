@@ -1,3 +1,4 @@
 require 'plugins.theme'
 require 'plugins.lualine'
 require 'plugins.oil'
+require 'plugins.lsp'
