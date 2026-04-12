@@ -48,7 +48,7 @@ vim.schedule(function()
 end)
 
 -- Fuzzy file picker -> https://neovim.io/doc/user/cmdline/#fuzzy-file-picker
-local filescache = {}
+filescache = {}
 function _G.Find(arg, _)
   if vim.tbl_isempty(filescache) then
     filescache = vim.fn.globpath('.', '**', true, true)

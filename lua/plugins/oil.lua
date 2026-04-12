@@ -14,6 +14,18 @@ function _G.get_oil_winbar()
   end
 end
 
+-- Refresh fuzzy finder cache after any modification
+local function custom_cb(err)
+    if err and err ~= "Canceled" then
+        vim.notify(err, vim.log.levels.ERROR)
+    end
+    if not err then
+        filescache = {}
+    end
+end
+local default_save = plugin.save
+plugin.save = function(opts, cb) return default_save(opts, custom_cb) end
+
 plugin.setup({
   columns = {
     "icon",
