@@ -36,7 +36,7 @@ plugin.setup({
   win_options = {
     winbar = "%!v:lua.get_oil_winbar()",
   },
-  skip_confirm_for_simple_edits = false,
+  skip_confirm_for_simple_edits = true,
   use_default_keymaps = false,
   keymaps = {
     ["g?"] = { "actions.show_help", mode = "n" },
