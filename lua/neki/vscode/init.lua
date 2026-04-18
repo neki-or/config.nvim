@@ -1,4 +1,4 @@
-vscode = require('vscode')
+vscode = require 'vscode'
 
 vscode_set = function(modes, keycode, vscode_command, kwargs)
     local fun = function() vscode.call(vscode_command) end
