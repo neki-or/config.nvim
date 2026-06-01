@@ -4,6 +4,10 @@ vim.pack.add({
 })
 
 local plugin = require 'lualine'
-plugin.setup()
+plugin.setup({
+    options = {
+        disabled_filetypes = { "no-neck-pain" },
+    },
+})
 
 vim.opt.showmode = false
