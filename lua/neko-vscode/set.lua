@@ -17,12 +17,12 @@ end
 -- Symlink settings.json and keybindings.json
 vim.fn.system({
     "ln", "-sf",
-    vim.fn.stdpath('config') .. "/lua/neki/vscode/settings.jsonc",
+    vim.fn.stdpath('config') .. "/lua/neko-vscode/settings.jsonc",
     vscode_stdpath()         .. "/User/settings.json"
 })
 vim.fn.system({
     "ln", "-sf",
-    vim.fn.stdpath('config') .. "/lua/neki/vscode/keybindings.jsonc",
+    vim.fn.stdpath('config') .. "/lua/neko-vscode/keybindings.jsonc",
     vscode_stdpath()         .. "/User/keybindings.json"
 })
 

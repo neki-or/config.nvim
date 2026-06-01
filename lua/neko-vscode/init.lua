@@ -12,6 +12,6 @@ vscode_set_async = function(modes, keycode, vscode_command)
     vim.keymap.set(modes, keycode, fun)
 end
 
-require 'neki.vscode.set'
-require 'neki.vscode.remap'
-require 'neki.cmd'
+require 'neko-vscode.set'
+require 'neko-vscode.remap'
+require 'neko.cmd'
