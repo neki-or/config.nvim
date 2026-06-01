@@ -1,16 +1,20 @@
 vim.pack.add({
     'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/mason-org/mason.nvim',
     'https://github.com/saghen/blink.cmp'
 })
 
-local completion = require 'blink.cmp'
-
 vim.lsp.enable({
     "lua_ls",
-    "pyright",
+    "pyrefly",
+    "rust_analyzer",
 })
 
+local mason = require 'mason'
+mason.setup()
+
 -- from kickstart.nvim
+local completion = require 'blink.cmp'
 completion.setup({
   keymap = {
     preset = 'default',
