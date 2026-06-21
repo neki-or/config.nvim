@@ -50,10 +50,15 @@ vim.g.maplocalleader = ' '
 
 -- Other settings
 vim.g.darwin = vim.fn.has('macunix') == 1   -- Is this MacOS?
-vim.g.have_nerd_font = true
 vim.g.netrw_liststyle = 3
 
+-- GUI settings
+if not vim.g.darwin then
+    vim.g.neovide_scale_factor = 0.8
 end
+vim.g.have_nerd_font = true
+vim.o.guifont = "SauceCodePro Nerd Font Mono:h14"
+vim.g.neovide_cursor_animation_length = 0
 
 require 'neko.fuzzyfinder'
 
