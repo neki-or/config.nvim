@@ -20,7 +20,7 @@ local function custom_cb(err)
         vim.notify(err, vim.log.levels.ERROR)
     end
     if not err then
-        filescache = {}
+        Filescache = {}
     end
 end
 local default_save = plugin.save
