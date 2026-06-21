@@ -27,7 +27,8 @@ vim.o.undofile = true
 vim.o.undodir = "/tmp/nvim/undo//"          -- Basically clears undo history when PC is shut down
 vim.o.updatetime = 250                      -- Decrease update time
 vim.o.timeoutlen = 300                      -- Decrease mapped sequence wait time
--- vim.o.autowrite = true TODO: check args lists
+vim.o.hidden = false
+vim.o.autowrite = true
 vim.o.confirm = true
 
 -- Behavior settings
